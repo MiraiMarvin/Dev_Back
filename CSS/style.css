@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Akira Super";
+    src: url("../fonts/Akira Expanded Demo.otf");
+    font-family: "bahnschrift";
+    src: url("../fonts/BAHNSCHRIFT.TTF");
+}
