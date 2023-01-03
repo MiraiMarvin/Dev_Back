@@ -8,3 +8,19 @@
     font-family: "bahnschrift";
     src: url("../fonts/BAHNSCHRIFT.TTF");
 }
+.search-card{
+    width: 15%;
+    height: 15%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.image_search{
+    width: 90%;
+    height: auto;
+
+}
+.title_search{
+    color: white;
+
+}

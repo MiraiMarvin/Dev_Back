@@ -32,10 +32,13 @@
     </div>
 
     <div class="flex flex-row w-full">
-        <div class="w-3/12 border-r-4 border-white border-2 border-indigo-600">
+        <div class="w-3/12 flex flex-row">
+            <div class="w-1/2"></div>
+            <div class="border-r-2 border-white w-1/2"></div>
 
         </div>
-        <div class="w-9/12 border-2 border-indigo-600">
+        <div class="w-9/12 flex flex-wrap gap-8 items-center text-center" id="right_search">
+
 
         </div>
     </div>

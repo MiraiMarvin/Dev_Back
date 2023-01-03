@@ -533,6 +533,10 @@ video {
   width: 25%;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .w-9\/12 {
   width: 75%;
 }
@@ -545,6 +549,10 @@ video {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-center {
   align-items: center;
 }
@@ -553,26 +561,21 @@ video {
   justify-content: space-between;
 }
 
+.gap-8 {
+  gap: 2rem;
+}
+
 .border {
   border-width: 1px;
 }
 
-.border-2 {
-  border-width: 2px;
-}
-
-.border-r-4 {
-  border-right-width: 4px;
+.border-r-2 {
+  border-right-width: 2px;
 }
 
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.border-indigo-600 {
-  --tw-border-opacity: 1;
-  border-color: rgb(79 70 229 / var(--tw-border-opacity));
 }
 
 .bg-black {
@@ -605,6 +608,10 @@ video {
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .font-Akira {
@@ -647,4 +654,21 @@ video {
   font-family: "bahnschrift";
 
   src: url("../fonts/BAHNSCHRIFT.TTF");
+}
+
+.search-card{
+  width: 15%;
+  height: 15%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.image_search{
+  width: 90%;
+  height: auto;
+}
+
+.title_search{
+  color: white;
 }
