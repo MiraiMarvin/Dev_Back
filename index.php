@@ -9,6 +9,7 @@
     <title>SpyMovies</title>
 </head>
 <body class="bg-black">
+
 <section class="w-full h-screen bg-[url('../image/bannerpromo.png')] bg-no-repeat bg-cover" >
     <div class="flex flex-row justify-between h-20 items-center">
         <h1 class="text-white font-Akira text-5xl px-5">SpyMovies</h1>
@@ -21,6 +22,12 @@
 <section class="w-full h-screen flex flex-col">
     <div>
         <h2 class="font-Akira text-3xl text-white">Movies</h2>
+        <form id="search-form" class="bg-black ">
+            <label for="search-input">Rechercher un film</label>
+            <input type="text" id="search-input" name="search" class="bg-black border border-white text-white" >
+            <button type="submit" class="text-white" id="search-button">Go</button>
+        </form>
+
 
     </div>
 
@@ -33,6 +40,8 @@
         </div>
     </div>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js" integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="Axios-search.js" type="module"></script>
 
 </body>
 </html>
