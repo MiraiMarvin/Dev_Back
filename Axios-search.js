@@ -25,15 +25,11 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=a8871525bb27f1c8364
 
 
 
-            var title = document.createElement("h2");
+            var title = document.createElement("h3");
             title.className ="title_search";
             title.innerHTML = movies[i].title;
             div.appendChild(title);
 
-            var id = document.createElement("p");
-            id.className = "hideid";
-            id.innerHTML = movies[i].id;
-            div.appendChild(id);
 
             var img = document.createElement("img");
             div.appendChild(img);
@@ -42,12 +38,6 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=a8871525bb27f1c8364
             var moviesimg = 'https://image.tmdb.org/t/p/w500' + movies[i].poster_path;
             img.src = moviesimg;
             img.alt = "affiche film";
-
-            // Sélectionne le bouton
-            var button = document.createElement('button');
-            button.className = "button_search";
-            button.innerHTML = 'Voir';
-            div.appendChild(button);
 
 
             const urlParams = new URLSearchParams(window.location.search);

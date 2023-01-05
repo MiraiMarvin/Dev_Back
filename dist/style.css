@@ -681,3 +681,55 @@ video {
 .button_search{
   color: white;
 }
+
+.single_page_main{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+#single_desc{
+  color: white;
+  width: 40%;
+}
+
+#single_pic{
+  text-align: center;
+  align-items: center;
+  color: white;
+  width: 40%;
+}
+
+#single_genre{
+  border-left: solid 2px white;
+  color: white;
+  width: 20%;
+}
+
+h2{
+  font-family: "Akira Super";
+  font-size: larger;
+}
+
+h3{
+  font-family: Bahnschrift;
+  font-size: large;
+}
+
+.pic-single{
+  margin: auto;
+}
+
+.text-single{
+  margin-top: 30px;
+  width: 80%;
+  font-family: bahnschrift;
+}
+
+.genre-single{
+  padding: 10px;
+  margin: auto;
+  font-family: bahnschrift;
+  font-weight: bold;
+}

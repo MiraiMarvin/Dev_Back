@@ -31,7 +31,7 @@
 
     </div>
 
-    <div class="flex flex-row w-full">
+    <div class="flex flex-row w-full ">
         <div class="w-3/12 flex flex-row">
             <div class="w-1/2"></div>
                 <a>romance</a>
