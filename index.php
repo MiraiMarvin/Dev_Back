@@ -1,6 +1,11 @@
 <?php
 session_start();
 var_dump($_SESSION);
+// Récupérer la valeur de la variable de session
+$id = $_SESSION['id'];
+
+// Convertir la variable en chaîne JSON
+$id_json = json_encode($id);
 
 require_once 'connection.php';
 
@@ -20,15 +25,19 @@ require_once 'connection.php';
 <section class="w-full h-screen bg-[url('../image/bannerpromo.png')] bg-no-repeat bg-cover" >
     <div class="flex flex-row justify-between h-20 items-center">
         <h1 class="text-white font-Akira text-5xl px-5">SpyMovies</h1>
-        <div class="font-Bahn text-2xl font-medium">
+        <div class="font-Bahn text-2xl font-medium flex flex-row">
             <a class="text-white px-2.5" href="login.php">Log In</a>
             <a class="text-white px-2.5" href="register.php">Register</a>
+            <img src="Arcane.png" alt="profil-image" id="image-pp">
             <?php
             if(isset($_SESSION['email']))
             {
             echo'<a href="disco.php" class="text-white px-2.5">log out</a>';
             }
             ?>
+            <script>
+                var id = <?php echo $id_json; ?>;
+            </script>
         </div>
     </div>
 </section>
@@ -67,6 +76,7 @@ require_once 'connection.php';
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js" integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="Axios-search.js" type="module"></script>
+<script src="switch_profil.js" type="module"></script>
 
 </body>
 </html>

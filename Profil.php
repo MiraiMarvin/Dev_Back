@@ -32,9 +32,17 @@ require_once 'connection.php';
     </div>
 </section>
 <section class="w-screen h-screen">
-    <div class="w-1/6 h-5/6 bg-white">
-        1
-    </div> 
+    <div>
+        <img src="Arcane.png" alt="PP">
+        <div>
+            
+        </div>
+
+
+    </div>
+    <div>
+
+    </div>
 </section>
 </body>
 </html>
