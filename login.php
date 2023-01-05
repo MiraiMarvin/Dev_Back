@@ -17,7 +17,7 @@ if(isset($_POST['send'])){
             $_SESSION['password'] = $password;
             $_SESSION['id'] = $result['id'];
             $_SESSION['checkadmin'] = $result['checkadmin'];
-            header('location:my-account.php');
+            header('location:index.php');
 
         }
         else{

@@ -6,12 +6,12 @@ class Connection
 
     public function __construct()
     {
-        $this->pdo = new PDO('mysql:dbname=spa;host=127.0.0.1', 'root', '');
+        $this->pdo = new PDO('mysql:dbname=spydevback;host=127.0.0.1', 'root', '');
     }
 
     public function insert(User $user): bool
     {
-        $query = 'INSERT INTO user (email, password, usernamee, last_name)
+        $query = 'INSERT INTO user (email, password, username, last_name)
                   VALUES (:email, :password, :username, :last_name)';
 
         $statement = $this->pdo->prepare($query);
@@ -19,7 +19,7 @@ class Connection
         return $statement->execute([
             'email' => $user->email,
             'password' => md5($user->password . 'MY_SUPER_SALT'),
-            'first_name' => $user->username,
+            'username' => $user->username,
             'last_name' => $user->lastName,
         ]);
     }

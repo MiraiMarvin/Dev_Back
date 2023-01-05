@@ -17,7 +17,7 @@
 <input type="text" name="last_name" id="log-Lname" placeholder="last name" class="">
 <input type="submit" value="register" class="btn btn-primary">
 </form>
-<a href="connect.php">login</a>
+<a href="login.php">login</a>
 <?php
 
 require_once 'user.php';

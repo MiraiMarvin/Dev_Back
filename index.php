@@ -1,3 +1,10 @@
+<?php
+session_start();
+var_dump($_SESSION);
+
+require_once 'connection.php';
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,8 +21,14 @@
     <div class="flex flex-row justify-between h-20 items-center">
         <h1 class="text-white font-Akira text-5xl px-5">SpyMovies</h1>
         <div class="font-Bahn text-2xl font-medium">
-            <a class="text-white px-2.5">Log In</a>
-            <a class="text-white px-2.5">Register</a>
+            <a class="text-white px-2.5" href="login.php">Log In</a>
+            <a class="text-white px-2.5" href="register.php">Register</a>
+            <?php
+            if(isset($_SESSION['email']))
+            {
+            echo'<a href="disco.php" class="nousalt">log out</a>';
+            }
+            ?>
         </div>
     </div>
 </section>
