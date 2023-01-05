@@ -26,25 +26,23 @@ require_once 'connection.php';
             <?php
             if(isset($_SESSION['email']))
             {
-            echo'<a href="disco.php" class="nousalt">log out</a>';
+            echo'<a href="disco.php" class="text-white px-2.5">log out</a>';
             }
             ?>
         </div>
     </div>
 </section>
-<section class="w-full h-screen flex flex-col">
-    <div>
-        <h2 class="font-Akira text-3xl text-white">Movies</h2>
-        <form id="search-form" class="bg-black ">
-            <label for="search-input">Rechercher un film</label>
-            <input type="text" id="search-input" name="search" class="bg-black border border-white text-white" >
+<section class="w-full h-screen ">
+    <div class="items-center text-center my-16">
+        <h2 class="font-Akira text-3xl text-white my-4">Movies</h2>
+        <form id="search-form" class="bg-black  ">
+
+            <input type="text" id="search-input" name="search" class="bg-black border border-white text-white px-32" >
             <button type="submit" class="text-white" id="search-button">Go</button>
         </form>
-
-
     </div>
 
-    <div class="flex flex-row w-full ">
+    <div class="flex flex-row w-full justify-evenly ">
         <div class="w-3/12 flex flex-row">
             <div class="w-1/2"></div>
                 <a>romance</a>
@@ -61,7 +59,7 @@ require_once 'connection.php';
             </div>
 
         </div>
-        <div class="w-9/12 flex flex-wrap gap-8 items-center text-center" id="right_search">
+        <div class="w-9/12 flex flex-wrap gap-8 items-center text-center justify-evenly" id="right_search">
 
 
         </div>
