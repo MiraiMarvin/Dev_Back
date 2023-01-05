@@ -34,7 +34,18 @@
     <div class="flex flex-row w-full">
         <div class="w-3/12 flex flex-row">
             <div class="w-1/2"></div>
-            <div class="border-r-2 border-white w-1/2"></div>
+                <a>romance</a>
+                <a>anime</a>
+                <a>western</a>
+                <a>science-fiction</a>
+                <a></a>
+            <div class="border-r-2 border-white w-1/2">
+                <a>Horreur</a>
+                <a>Comédie</a>
+                <a>Action</a>
+                <a>Thriller</a>
+                <a>Fantastique</a>
+            </div>
 
         </div>
         <div class="w-9/12 flex flex-wrap gap-8 items-center text-center" id="right_search">

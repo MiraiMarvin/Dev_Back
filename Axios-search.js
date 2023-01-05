@@ -50,18 +50,14 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=a8871525bb27f1c8364
             div.appendChild(button);
 
 
+            const urlParams = new URLSearchParams(window.location.search);
+            urlParams.set('id', movies[i].id);
 
             div.addEventListener('click', function() {
-                var data = movies[i].id
 
-                var params = new URLSearchParams();
-                for (var key in data) {
-                    params.append(key, data[key]);
-                }
-                var dataString = params.toString();
 
                 // Redirige vers la page cible en passant les informations dans l'URL
-                window.location.href = 'single_movies.php' + dataString;
+                window.location.href = 'single_movies.php?' + urlParams ;
 
             });
 
@@ -79,31 +75,3 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=a8871525bb27f1c8364
 
 
 
-
-/*
-var data = {
-                    id: movies[i].id,
-                    nom: movies[i].title
-                };
-                var params = new URLSearchParams();
-                for (var key in data) {
-                    params.append(key, data[key]);
-                }
-                var dataString = params.toString();
-
-button.addEventListener('click', function (event) {
-    event.preventDefault(); // empêche l'envoi du formulaire
-
-    const query = input.value; // récupère la valeur du champ de texte
-
-});
-for (var i = 0; i < movies.length; i++)
-
-movies.forEach((element) => {
-            console.log({ element });
-            var div = document.createElement('div');
-
-            div.className = 'search-card';
-            var title = "<h2>" movies.element.original_title "</h2>";
-            div.innerHTML = title;
-*/
