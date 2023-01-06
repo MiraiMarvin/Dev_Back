@@ -1,8 +1,13 @@
 <?php
 session_start();
-var_dump($_SESSION);
+
 
 require_once 'connection.php';
+require_once 'Profil_extract.php';
+
+$user_id=$_SESSION['id'];
+$connection = new Connection();
+$result = $connection->getAllUser($user_id);
 
 ?>
 <!doctype html>
@@ -32,11 +37,23 @@ require_once 'connection.php';
     </div>
 </section>
 <section class="w-screen h-screen">
-    <div>
-        <img src="Arcane.png" alt="PP">
+    <div class="">
+        <div class="flex flex-row space-evenly items-center gap-8">
+        <img src="./image/Arcane.png" alt="PP" class="rounded-full w-96 h-auto">
         <div>
-            
+            <?php
+            $user_id=$_SESSION['id'];
+            $connection = new Connection();
+            $result = $connection->getAllUser($user_id);
+
+             foreach($result as $info) { ?>
+                <div class="avis_box">
+                    <h3 class="text-2xl text-white font-Akira"><?= $info['username'] ?></h3>
+                    <div class="font-Bahn text-white text-xl"><?= $info['bio'] ?></div>
+                </div>
+            <?php } ?>
         </div>
+    </div>
 
 
     </div>
@@ -44,5 +61,6 @@ require_once 'connection.php';
 
     </div>
 </section>
+
 </body>
 </html>

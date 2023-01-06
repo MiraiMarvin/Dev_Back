@@ -535,6 +535,10 @@ video {
   height: 5rem;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .w-full {
   width: 100%;
 }
@@ -549,6 +553,22 @@ video {
 
 .w-9\/12 {
   width: 75%;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.w-36 {
+  width: 9rem;
+}
+
+.w-52 {
+  width: 13rem;
+}
+
+.w-96 {
+  width: 24rem;
 }
 
 .flex-row {
@@ -575,6 +595,10 @@ video {
   gap: 2rem;
 }
 
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .border {
   border-width: 1px;
 }
@@ -591,6 +615,11 @@ video {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\.\.\/image\/bannerpromo\.png\'\)\] {
@@ -750,8 +779,8 @@ h3{
   font-weight: bold;
 }
 
-.image-pp{
-  width: 30px;
-  height: 30px;
+#image-pp{
+  width: 40px;
+  height: 40px;
   border-radius: 20px;
 }

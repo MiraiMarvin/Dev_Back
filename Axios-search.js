@@ -63,5 +63,3 @@ axios.get('https://api.themoviedb.org/3/search/movie?api_key=a8871525bb27f1c8364
 
 
 
-
-

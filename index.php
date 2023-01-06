@@ -28,7 +28,7 @@ require_once 'connection.php';
         <div class="font-Bahn text-2xl font-medium flex flex-row">
             <a class="text-white px-2.5" href="login.php">Log In</a>
             <a class="text-white px-2.5" href="register.php">Register</a>
-            <img src="Arcane.png" alt="profil-image" id="image-pp">
+            <img src="./image/Arcane.png" alt="profil-image" id="image-pp">
             <?php
             if(isset($_SESSION['email']))
             {
@@ -49,26 +49,14 @@ require_once 'connection.php';
             <input type="text" id="search-input" name="search" class="bg-black border border-white text-white px-32" >
             <button type="submit" class="text-white" id="search-button">Go</button>
         </form>
+        <a href="searchgenre.php" class="text-white text-2xl font-Bahn">cherchez par genre</a>
     </div>
 
-    <div class="flex flex-row w-full justify-evenly ">
-        <div class="w-3/12 flex flex-row">
-            <div class="w-1/2"></div>
-                <a>romance</a>
-                <a>anime</a>
-                <a>western</a>
-                <a>science-fiction</a>
-                <a></a>
-            <div class="border-r-2 border-white w-1/2">
-                <a>Horreur</a>
-                <a>Comédie</a>
-                <a>Action</a>
-                <a>Thriller</a>
-                <a>Fantastique</a>
-            </div>
+    <div class="w-3/12 ">
 
-        </div>
-        <div class="w-9/12 flex flex-wrap gap-8 items-center text-center justify-evenly" id="right_search">
+    </div>
+    <div class="flex flex-row w-full justify-evenly  ">
+        <div class="w-9/12 flex flex-wrap gap-8 items-center text-center justify-evenly " id="right_search">
 
 
         </div>

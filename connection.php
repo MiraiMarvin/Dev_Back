@@ -59,9 +59,9 @@ class Connection
             'user_id' => $pets->foreign_key,
         ]);
     }
-    public function getAllOWNER($pets_id): array
+    public function getAllUser($user_id): array
     {
-        $query = "SELECT * FROM Pets WHERE user_id = '$pets_id'";
+        $query = "SELECT * FROM user WHERE id = '$user_id'";
 
         $statement = $this->pdo->query($query);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
