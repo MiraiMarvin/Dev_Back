@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.php","./Profil.php"],
+  content: ["./index.php","./Profil.php","./single_movies.php"],
   theme: {
     extend: {
       fontFamily: {

@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+require_once 'connection.php';
+
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,7 +27,55 @@
 </section>
 <section class="single_page_main">
     <div id="single_pic"> </div>
-    <div id="single_desc"></div>
+    <div id="single_desc">
+        <?php
+        $allalb = $_SESSION['id'];
+        $connection = new Connection();
+        $result = $connection->getAllAlbum($allalb);
+        ?>
+        <p class="text-white font-Bahn">ajoutez ce film à un album</p>
+        <form method="POST">
+            <select name="mon_select"  class="border-2 border-white bg-transparent text-white">
+                <?php
+                foreach ($result as $element) {
+                    echo '<option name="choose" value="' . $element['id'] . '">' . $element['title'] . '</option>';
+                }
+                ?>
+            </select>
+            <input type="submit" value="register" class="btn btn-primary">
+        </form>
+        <?php
+        require_once 'film.php';
+        require_once 'connection.php';
+
+
+
+
+        if ($_POST) {
+            $film = new film(
+                $_GET['id'],
+                $_POST['mon_select'],
+
+            );
+                $connection = new Connection();
+                $result = $connection->insertFilm($film);
+
+                if ($result) {
+                    echo 'Registered with success!';
+                } else {
+                    echo ' error ';
+                }
+            } else {
+                echo 'Form has an error';
+            }
+
+
+
+
+        ?>
+
+
+    </div>
     <div id="single_genre"></div>
 
 </section>

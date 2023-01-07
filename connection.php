@@ -36,6 +36,7 @@ class Connection
         return $statement->fetchAll()[0];
     }
 
+
     public function getAll(): array
     {
         $query = 'SELECT * FROM pets JOIN user ON user.id = pets.user_id';
@@ -104,6 +105,18 @@ class Connection
             'titre' => $album->titre,
             'status' => $album->status,
             'user_id' => $album->user_id,
+        ]);
+    }
+    public function insertFilm (film $film): bool
+    {
+        $query = 'INSERT INTO film (api_id, album_id)
+                  VALUES (:api_id, :album_id)';
+
+        $statement = $this->pdo->prepare($query);
+
+        return $statement->execute([
+            'api_id' => $film->api_id,
+            'album_id' => $film->album_id,
         ]);
     }
 

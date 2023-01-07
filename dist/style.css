@@ -845,3 +845,7 @@ h3{
 .modalmain{
   display: none;
 }
+
+option{
+  background-color: transparent;
+}
