@@ -28,11 +28,12 @@ require_once 'connection.php';
         <div class="font-Bahn text-2xl font-medium flex flex-row">
             <a class="text-white px-2.5" href="login.php">Log In</a>
             <a class="text-white px-2.5" href="register.php">Register</a>
-            <img src="./image/Arcane.png" alt="profil-image" id="image-pp">
+
             <?php
             if(isset($_SESSION['email']))
             {
-            echo'<a href="disco.php" class="text-white px-2.5">log out</a>';
+                echo '<img src="./image/Arcane.png" alt="profil-image" id="image-pp">';
+                echo'<a href="disco.php" class="text-white px-2.5">log out</a>';
             }
             ?>
             <script>

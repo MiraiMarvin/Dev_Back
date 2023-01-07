@@ -67,6 +67,13 @@ class Connection
         $statement = $this->pdo->query($query);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function getAllAlbum($user_id): array
+    {
+        $query = "SELECT * FROM album WHERE user_id = '$user_id'";
+
+        $statement = $this->pdo->query($query);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
     public function getReallyAllUser(): array
     {
         $query = "SELECT * FROM user ";

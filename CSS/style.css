@@ -94,7 +94,7 @@ h3{
     border-radius: 20px;
 }
 .modal{
-    display: none;
+
     position: fixed;
     top: 300px;
     left: 300px;
@@ -108,4 +108,7 @@ h3{
     color: white;
     align-items: center;
     gap: 24px;
+}
+.modalmain{
+    display: none;
 }

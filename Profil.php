@@ -3,7 +3,7 @@ session_start();
 
 require_once 'connection.php';
 
-$user_id=$_SESSION['id'];
+$user_id = $_SESSION['id'];
 $connection = new Connection();
 $result = $connection->getAllUser($user_id);
 
@@ -40,7 +40,7 @@ $result = $connection->getAllUser($user_id);
             <img src="./image/Arcane.png" alt="PP" class="rounded-full w-96 h-auto">
             <div>
                 <?php
-                $user_id=$_SESSION['id'];
+                $user_id = $_SESSION['id'];
                 $connection = new Connection();
                 $result = $connection->getAllUser($user_id);
 
@@ -54,9 +54,10 @@ $result = $connection->getAllUser($user_id);
 
         </div>
         <div>
-            <button id="myBtn" class="font-Bahn text-white">Ouvrir la modale</button>
+            <button id="myBtn" class="font-Bahn text-white mt-24">ajouter un album</button>
         </div>
-        <div id="myModal" class="modal">
+        <div id="myModal" class="modalmain">
+            <div class="modal">
                 <span class="close">&times;</span>
                 <p class="text-white font-Akira">Creer votre album</p>
                 <form method="POST" class=" flex flex-col gap-8 font-Bahn  bg-transparent w-1/4 h-3/4">
@@ -73,7 +74,7 @@ $result = $connection->getAllUser($user_id);
             require_once 'Album.php';
             require_once 'connection.php';
 
-
+            $user_id = $_GET['id'];
             if ($_POST) {
                 $album = new album(
                     $_POST['titre'],
@@ -99,10 +100,27 @@ $result = $connection->getAllUser($user_id);
             }
 
             ?>
+            </div>
+        </div>
+        <div class="flex flex-wrap gap-8">
+        <?php
+        $user_id = $_SESSION['id'];
+        $connection = new Connection();
+        $result = $connection->getAllAlbum($user_id);
 
+
+        foreach($result as $alb) { ?>
+            <div class="border-white border-2 w-32 h-32 flex flex-wrap gap-8 mt-24">
+                <h2 class="text-white text-l font-Bahn"><?= $alb['title']?></h2>
+
+            </div>
+        <?php } ?>
         </div>
     </div>
 
+
+</section>
+<section class="">
 
 </section>
 <script src="modal.js"></script
