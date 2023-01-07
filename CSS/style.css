@@ -94,6 +94,7 @@ h3{
     border-radius: 20px;
 }
 .modal{
+    display: none;
     position: fixed;
     top: 300px;
     left: 300px;

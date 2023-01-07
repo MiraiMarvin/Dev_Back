@@ -2,7 +2,6 @@
 session_start();
 
 require_once 'connection.php';
-require_once 'Profil_extract.php';
 
 $user_id=$_SESSION['id'];
 $connection = new Connection();
@@ -54,6 +53,9 @@ $result = $connection->getAllUser($user_id);
             </div>
 
         </div>
+        <div>
+            <button id="myBtn" class="font-Bahn text-white">Ouvrir la modale</button>
+        </div>
         <div id="myModal" class="modal">
                 <span class="close">&times;</span>
                 <p class="text-white font-Akira">Creer votre album</p>
@@ -70,6 +72,8 @@ $result = $connection->getAllUser($user_id);
 
             require_once 'Album.php';
             require_once 'connection.php';
+
+
             if ($_POST) {
                 $album = new album(
                     $_POST['titre'],
@@ -95,11 +99,12 @@ $result = $connection->getAllUser($user_id);
             }
 
             ?>
+
         </div>
     </div>
 
 
 </section>
-<script src="modal.js" ></script>
+<script src="modal.js"></script
 </body>
 </html>

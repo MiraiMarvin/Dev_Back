@@ -1,6 +1,5 @@
 <?php
 session_start();
-var_dump($_SESSION);
 // Récupérer la valeur de la variable de session
 $id = $_SESSION['id'];
 
@@ -8,6 +7,7 @@ $id = $_SESSION['id'];
 $id_json = json_encode($id);
 
 require_once 'connection.php';
+
 
 ?>
 <!doctype html>
@@ -41,7 +41,7 @@ require_once 'connection.php';
         </div>
     </div>
 </section>
-<section class="w-full h-screen ">
+<section class="w-full ">
     <div class="items-center text-center my-16">
         <h2 class="font-Akira text-3xl text-white my-4">Movies</h2>
         <form id="search-form" class="bg-black  ">
@@ -60,6 +60,28 @@ require_once 'connection.php';
 
 
         </div>
+    </div>
+
+</section>
+<section class="w-screen items-center flex flex-col ">
+    <h2 class="text-white font-Akira text-3xl">Social</h2>
+    <h3 class="text-white font-Bahn text-xl">founds friends </h3>
+    <div id="list_user" class="flex flex-col border-t-2 border-white">
+        <?php
+        $connection = new Connection();
+        $resultall = $connection->getReallyAllUser();
+
+
+        foreach($resultall as $all) { ?>
+                <?=$url = "single_user.php?item=" . $all['id'] ;?>
+
+            <div class="flex flex-col  m-8">
+                <h3 class="text-xl text-white font-Akira"><?= $all['username'] ?></h3>
+                <div class="font-Bahn text-white text-l"><?= $all['bio'] ?></div>
+                <a href="<?=$url?>" class="text-white font-Bahn pt-4">voir</a>
+            </div>
+        <?php }?>
+
     </div>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js" integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

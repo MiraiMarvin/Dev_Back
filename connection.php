@@ -66,6 +66,13 @@ class Connection
         $statement = $this->pdo->query($query);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function getReallyAllUser(): array
+    {
+        $query = "SELECT * FROM user ";
+
+        $statement = $this->pdo->query($query);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
     public function delete(int $id): bool
     {
         $query = 'DELETE FROM pets
