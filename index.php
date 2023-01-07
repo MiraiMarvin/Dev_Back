@@ -66,7 +66,7 @@ require_once 'connection.php';
 <section class="w-screen items-center flex flex-col ">
     <h2 class="text-white font-Akira text-3xl">Social</h2>
     <h3 class="text-white font-Bahn text-xl">founds friends </h3>
-    <div id="list_user" class="flex flex-col border-t-2 border-white">
+    <div id="list_user" class="flex flex-col border-t-2 border-b-2 w-1/2">
         <?php
         $connection = new Connection();
         $resultall = $connection->getReallyAllUser();
@@ -75,9 +75,9 @@ require_once 'connection.php';
         foreach($resultall as $all) { ?>
                 <?=$url = "single_user.php?item=" . $all['id'] ;?>
 
-            <div class="flex flex-col  m-8">
+            <div class="flex flex-col  m-4 ">
                 <h3 class="text-xl text-white font-Akira"><?= $all['username'] ?></h3>
-                <div class="font-Bahn text-white text-l"><?= $all['bio'] ?></div>
+                <div class="font-Bahn text-gray-500 text-l"><?= $all['last_name'] ?></div>
                 <a href="<?=$url?>" class="text-white font-Bahn pt-4">voir</a>
             </div>
         <?php }?>

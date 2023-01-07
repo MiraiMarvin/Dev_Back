@@ -5,7 +5,8 @@ class User
         public string $email,
         public string $password,
         public string $username,
-        public string $lastName
+        public string $lastName,
+        public string $bio
     )
     {
     }

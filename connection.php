@@ -11,8 +11,8 @@ class Connection
 
     public function insert(User $user): bool
     {
-        $query = 'INSERT INTO user (email, password, username, last_name)
-                  VALUES (:email, :password, :username, :last_name)';
+        $query = 'INSERT INTO user (email, password, username, last_name,bio)
+                  VALUES (:email, :password, :username, :last_name, :bio)';
 
         $statement = $this->pdo->prepare($query);
 
@@ -21,6 +21,7 @@ class Connection
             'password' => md5($user->password . 'MY_SUPER_SALT'),
             'username' => $user->username,
             'last_name' => $user->lastName,
+            'bio' => $user->bio,
         ]);
     }
     public function take($email,$password): array|bool

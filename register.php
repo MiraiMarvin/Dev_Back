@@ -15,6 +15,7 @@
 <input type="text" name="password" id="log-pass" placeholder="password" class="">
 <input type="text" name="username" id="log-user" placeholder="username" class="">
 <input type="text" name="last_name" id="log-Lname" placeholder="last name" class="">
+<input type="text" name="bio" id="log-bio" placeholder="biographie" class="">
 <input type="submit" value="register" class="btn btn-primary">
 </form>
 <a href="login.php">login</a>
@@ -29,6 +30,7 @@ if ($_POST) {
         $_POST['password'],
         $_POST['username'],
         $_POST['last_name'],
+        $_POST['bio'],
     );
 
     if ($user->verify()) {
