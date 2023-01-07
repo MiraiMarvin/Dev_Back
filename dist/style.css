@@ -539,16 +539,16 @@ video {
   height: auto;
 }
 
+.h-3\/4 {
+  height: 75%;
+}
+
 .w-full {
   width: 100%;
 }
 
 .w-3\/12 {
   width: 25%;
-}
-
-.w-1\/2 {
-  width: 50%;
 }
 
 .w-9\/12 {
@@ -559,20 +559,20 @@ video {
   width: 100vw;
 }
 
-.w-36 {
-  width: 9rem;
-}
-
-.w-52 {
-  width: 13rem;
-}
-
 .w-96 {
   width: 24rem;
 }
 
+.w-1\/4 {
+  width: 25%;
+}
+
 .flex-row {
   flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .flex-wrap {
@@ -603,8 +603,8 @@ video {
   border-width: 1px;
 }
 
-.border-r-2 {
-  border-right-width: 2px;
+.border-2 {
+  border-width: 2px;
 }
 
 .border-white {
@@ -617,9 +617,8 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-\[url\(\'\.\.\/image\/bannerpromo\.png\'\)\] {
@@ -679,6 +678,11 @@ video {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-medium {
@@ -780,7 +784,23 @@ h3{
 }
 
 #image-pp{
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 20px;
+}
+
+.modal{
+  position: fixed;
+  top: 300px;
+  left: 300px;
+  right: 300px;
+  bottom: 300px;
+  z-index: 100;
+  background-color: rgba(0,0,0,0.9);
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  gap: 24px;
 }

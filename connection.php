@@ -78,4 +78,19 @@ class Connection
         ]);
     }
 
+    public function insertAl(album $album): bool
+    {
+        $query = 'INSERT INTO album (title, status, user_id)
+          VALUES (:titre, :status, :user_id)';
+
+        $statement = $this->pdo->prepare($query);
+
+        return $statement->execute([
+            'titre' => $album->titre,
+            'status' => $album->status,
+            'user_id' => $album->user_id,
+        ]);
+    }
+
+
 }
