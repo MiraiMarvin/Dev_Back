@@ -10,6 +10,7 @@
     <title>login</title>
 </head>
 <body>
+<?php include('header.php'); ?>
 <form method="POST" class="">
 <input type="text" name="email" id="log-email" placeholder="mail" class="">
 <input type="text" name="password" id="log-pass" placeholder="password" class="">

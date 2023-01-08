@@ -16,15 +16,7 @@ require_once 'connection.php';
     <title>Single_page_movies</title>
 </head>
 <body class="bg-black">
-<section class="w-full " >
-    <div class="flex flex-row justify-between h-20 items-center">
-        <h1 class="text-white font-Akira text-5xl px-5">SpyMovies</h1>
-        <div class="font-Bahn text-2xl font-medium">
-            <a class="text-white px-2.5">Log In</a>
-            <a class="text-white px-2.5">Register</a>
-        </div>
-    </div>
-</section>
+<?php include('header.php'); ?>
 <section class="single_page_main">
     <div id="single_pic"> </div>
     <div id="single_desc">

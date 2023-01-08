@@ -40,6 +40,7 @@ if(isset($_POST['send'])){
     <link href="dist/style.css" rel="stylesheet">
     <title>Connect</title>
 </head>
+<?php include('header.php'); ?>
 <body>
 
 <form method="POST" class="" align="center">

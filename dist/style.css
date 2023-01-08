@@ -649,11 +649,6 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .bg-transparent {
   background-color: transparent;
 }
@@ -877,4 +872,31 @@ option{
 
 .modalalbmain{
   display: none;
+}
+
+#main_contain{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mainlistfilm{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 16px;
+}
+
+.img_album{
+  width: auto;
+  height: 100px;
+}
+
+.text-single_alb{
+  color: white;
+  font-family: Bahnschrift;
+}
+
+.delfilm{
+  color: white;
 }
