@@ -8,6 +8,7 @@
     font-family: "bahnschrift";
     src: url("../fonts/BAHNSCHRIFT.TTF");
 }
+
 .search-card{
     width: 15%;
     height: 15%;
@@ -114,4 +115,23 @@ h3{
 }
 option{
     background-color: transparent;
+}
+.modalfilm{
+
+    position: fixed;
+    top: 300px;
+    left: 300px;
+    right: 300px;
+    bottom: 300px;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.9);
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    gap: 24px;
+}
+.modalalbmain{
+    display: none;
 }

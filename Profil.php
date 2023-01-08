@@ -110,13 +110,17 @@ $result = $connection->getAllUser($user_id);
 
 
         foreach($result as $alb) { ?>
-            <div class="border-white border-2 w-32 h-32 flex flex-wrap gap-8 mt-24">
+                <p class="hidden"><?=$url = "inside_alb.php?albid=" . $alb['id'] ;?></p>
+            <div  class="border-white border-2 w-32 h-32 flex flex-wrap gap-8 mt-24">
+                <form method="post" action="<?=$url?>" >
                 <h2 class="text-white text-l font-Bahn"><?= $alb['title']?></h2>
-
+                <button name="submit" type="submit" class="text-white font-Bahn">voir</button>
+                </form>
             </div>
+
         <?php } ?>
         </div>
-    </div>
+
 
 
 </section>

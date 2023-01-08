@@ -119,6 +119,13 @@ class Connection
             'album_id' => $film->album_id,
         ]);
     }
+    public function getAllFilm($album_id): array
+    {
+        $query = "SELECT * FROM film WHERE album_id = '$album_id'";
+
+        $statement = $this->pdo->query($query);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 
 }

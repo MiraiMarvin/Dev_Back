@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require_once 'Album.php';
 require_once 'connection.php';
 $id_foreign = $_GET['item'];
 $connection = new Connection();
@@ -51,6 +51,20 @@ $result = $connection->getAllUser($id_foreign);
                 <?php } ?>
             </div>
 
+        </div>
+        <div class="flex flex-wrap gap-8">
+            <?php
+            $user_id = $_GET['item'];
+            $connection = new Connection();
+            $result = $connection->getAllAlbum($user_id);
+
+
+            foreach($result as $alb) { ?>
+                <div class="border-white border-2 w-32 h-32 flex flex-wrap gap-8 mt-24">
+                    <h2 class="text-white text-l font-Bahn"><?= $alb['title']?></h2>
+
+                </div>
+            <?php } ?>
         </div>
 
     </div>
