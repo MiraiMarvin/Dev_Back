@@ -126,6 +126,12 @@ class Connection
         $statement = $this->pdo->query($query);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function deletefilm($myVar, $id_sup): bool
+    {
+        $query = "DELETE FROM film WHERE api_id = ? AND album_id = ?";
+        $statement = $this->pdo->prepare($query);
+        return $statement->execute([$myVar, $id_sup]);
+    }
 
 
 }

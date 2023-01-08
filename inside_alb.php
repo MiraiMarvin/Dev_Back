@@ -30,10 +30,24 @@ require_once 'connection.php';
         </script>
 
     </div>
+    <div>
+
+    </div>
     <div id="main_contain">
 
 
     </div>
+    <?php
+    if (isset($_POST['myVar'])) {
+        $myVar = $_POST['myVar'];
+        var_dump($myVar);
+        $id_sup =$_GET['albid'];
+        var_dump($id_sup);
+        $connection = new Connection();
+        $connection->deletefilm($myVar,$id_sup);
+
+    }
+    ?>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js" integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="PrintFilm.js" type="module"></script>

@@ -1,10 +1,16 @@
 
 for (var i = 0; i < maVariableJS.length; i++){
      var search = maVariableJS[i].api_id;
+        var id_film = maVariableJS[i].id;
+        console.log(id_film)
+
     axios.get('https://api.themoviedb.org/3/movie/'+search+'?api_key=a8871525bb27f1c83641251be4509be6&language=en-US')
         .then(function (response) {
             const movies_single = response.data;
             console.log(movies_single)
+                let myVar = movies_single.id;
+
+
 
             var main = document.createElement("div");
             main.className ="mainlistfilm";
@@ -25,22 +31,21 @@ for (var i = 0; i < maVariableJS.length; i++){
             over.className ="text-single_alb";
             over.innerHTML = movies_single.overview;
             main.appendChild(over);
-            var button = document.createElement("button");
+            var form = document.createElement("form");
+            form.className = "formdel";
+            form.method = "POST";
+            main.appendChild(form);
+            var button = document.createElement("input");
             button.className ="del_film";
-            main.appendChild(button);
-
-
-
-
-
-
-
-
-
-
-
-
-
+            button.type = "submit";
+            button.innerHTML = 'supprimer';
+            form.appendChild(button);
+            var hidden = document.createElement("input");
+            hidden.type = "hidden";
+            hidden.id = "myVar";
+            hidden.name = "myVar";
+            hidden.value = myVar;
+            form.appendChild(hidden);
 
 
 
