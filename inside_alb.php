@@ -40,9 +40,7 @@ require_once 'connection.php';
     <?php
     if (isset($_POST['myVar'])) {
         $myVar = $_POST['myVar'];
-        var_dump($myVar);
         $id_sup =$_GET['albid'];
-        var_dump($id_sup);
         $connection = new Connection();
         $connection->deletefilm($myVar,$id_sup);
 
