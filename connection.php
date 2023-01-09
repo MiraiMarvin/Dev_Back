@@ -145,6 +145,29 @@ class Connection
         $statement = $this->pdo->prepare($query);
         return $statement->execute([$myVar, $id_sup]);
     }
+    public function receive_ALSH($receive_id): array
+    {
+        $query = "SELECT * FROM album_share JOIN album WHERE id_receive = '$receive_id' AND album.id = album_id";
+
+        $statement = $this->pdo->query($query);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function TrueChange($id_rec , $albshare_id): array
+    {
+        $query = "UPDATE album_share SET accept = TRUE WHERE id_receive = '$id_rec' AND album_id = '$albshare_id'";
+
+        $statement = $this->pdo->query($query);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function delinvite($id_rec, $albshare_id): array
+    {
+        $query = "DELETE FROM album_share WHERE id_receive = '$id_rec' AND album_id = '$albshare_id'";
+
+        $statement = $this->pdo->query($query);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
 
 
 }

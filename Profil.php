@@ -36,6 +36,49 @@ $result = $connection->getAllUser($user_id);
                         <div class="font-Bahn text-white text-xl"><?= $info['bio'] ?></div>
                     </div>
                 <?php } ?>
+
+            </div>
+            <div>
+                <?php
+                $receive_id = $_SESSION['id'];
+                $connection = new Connection();
+                $receive_result = $connection->receive_ALSH($receive_id);
+                var_dump($receive_result);
+
+                foreach ($receive_result as $send) { ?>
+                    <div class="border-2 border-white">
+                        <p class="text-white font-Bahn">voulez vous recevoir l'album <?=$send['title'] ?> ?</p>
+                        <form  method="post">
+                            <label for="radio1" class="text-white">oui</label>
+                            <input type="radio" name="mon_bouton_radio1" value="oui">
+                            <label for="radio2" class="text-white">non</label>
+                            <input type="radio" name="mon_bouton_radio2" value="non">
+                            <input type="hidden" name="id_invite" value="<?=$send['id']?>">
+                            <input type="submit" class="text-white" value="Envoyer">
+                        </form>
+                        <?php
+                        $albshare_id = $_POST['id_invite'];
+                        $id_rec = $_SESSION['id'];
+
+
+                        if (isset($_POST['mon_bouton_radio1'])){
+
+                            $connection = new Connection();
+                            $TrueChange = $connection->TrueChange($id_rec , $albshare_id);
+
+
+                        }
+                        else{
+                            $connection = new Connection();
+                            $TrueChange = $connection->delinvite($id_rec , $albshare_id);
+                        }
+                        ?>
+
+                    </div>
+
+                <?php }
+                ?>
+
             </div>
 
         </div>
