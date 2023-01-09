@@ -1,56 +1,27 @@
-const select = document.querySelector('#my-select');
-var value = select.value;
-console.log(value)
+let select = document.getElementById('my-select');
+const movieContainer = document.getElementById('right_search_genre')
 
+async function getMoviesByGenre(ID) {
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=a8871525bb27f1c83641251be4509be6&language=fr-FR&page=1&with_genres=${ID}`);
+        const data = await response.json();
 
-
-axios.get('https://api.themoviedb.org/3/discover/movie?api_key=a8871525bb27f1c83641251be4509be6&language=fr-FR&page=1&with_genres='+value)
-    .then(function (response) {
-        // traiter la réponse de l'API
-        const moviesgenre = response.data.results;
-
-
-        for (var i = 0; i < moviesgenre.length; i++){
-
-
-            var div = document.createElement("div");
-            div.className ="search-card";
-            document.getElementById("right_search_genre").appendChild(div);
-
-
-
-            var title = document.createElement("h3");
-            title.className ="title_search";
-            title.innerHTML = moviesgenre[i].title;
-            div.appendChild(title);
-
-
-            var img = document.createElement("img");
-            div.appendChild(img);
-            img.className ="image_search";
-
-            var moviesimg = 'https://image.tmdb.org/t/p/w500' + moviesgenre[i].poster_path;
-            img.src = moviesimg;
-            img.alt = "affiche film";
-
-
-            const urlParams = new URLSearchParams(window.location.search);
-            urlParams.set('id', moviesgenre[i].id);
-
-            div.addEventListener('click', function() {
-
-
-                // Redirige vers la page cible en passant les informations dans l'URL
-                window.location.href = 'single_movies.php?' + urlParams ;
-
-            });
-
-
+        movieContainer.innerHTML = "";
+        for (const movie of data.results) {
+            movieContainer.innerHTML +=
+                `<a href="single_movies.php?id=${movie.id}">
+                <div class="search-card">
+                        <h3 class="title_search">${movie.title}</h3>
+                        <img class="image_search" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="affiche film">
+                      </div>
+                </a>`;
         }
+    } catch (error) {
+        movieContainer.innerHTML = `<p>${error.message}</p>`;
+    }
+}
 
-
-
-    })
-    .catch(function (error) {
-        // gérer les erreur
-    });
+select.addEventListener("change", function(){
+    let genreId = select.value;
+    getMoviesByGenre(genreId)
+});

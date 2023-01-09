@@ -2,6 +2,7 @@
 session_start();
 require_once 'Album.php';
 require_once 'connection.php';
+require_once 'album_share.php';
 $id_foreign = $_GET['item'];
 $connection = new Connection();
 $result = $connection->getAllUser($id_foreign);
@@ -35,6 +36,47 @@ $result = $connection->getAllUser($id_foreign);
                         <div class="font-Bahn text-white text-xl"><?= $info['bio'] ?></div>
                     </div>
                 <?php } ?>
+                <div>
+                    <?php
+                    $allalb = $_SESSION['id'];
+                    $connection = new Connection();
+                    $resultat = $connection->getAllAlbum($allalb);
+                    ?>
+                    <p class="text-white font-Bahn">partagez un album</p>
+                    <form method="POST">
+                        <select name="mon_select"  class="border-2 border-white bg-transparent text-white">
+                            <?php
+                            foreach ($resultat as $element) {
+                                echo '<option name="choose" value="' . $element['id'] . '">' . $element['title'] . '</option>';
+                            }
+                            ?>
+                        </select>
+                        <input type="submit" value="register" class="text-white">
+                    </form>
+                        <?php
+                        if ($_POST) {
+                            $album_share = new album_share(
+                                $_GET['item'],
+                                $_SESSION['id'],
+                                $_POST['mon_select'],
+
+                            );
+                            $connection = new Connection();
+                            $allalbum_share = $connection->insertAl_SH($album_share);
+
+                            if ($result) {
+                                echo 'invitation envoyée';
+                            } else {
+                                echo ' error ';
+                            }
+                        } else {
+                            echo 'Form has an error';
+                        }
+
+                        ?>
+
+                    </form>
+                </div>
             </div>
 
         </div>

@@ -49,10 +49,7 @@ $result = $connection->getAllUser($user_id);
                 <form method="POST" class=" flex flex-col gap-8 font-Bahn  bg-transparent w-1/4 h-3/4">
                     <input type="text" name="titre" id="album_title" placeholder="titre" class="border-white border-2 bg-transparent ">
                     <label for="myBoolean">is private ?</label><br>
-                    <select name="myBoolean" id="myBoolean">
-                        <option value="1">publique</option>
-                        <option value="0">privé</option>
-                    </select>
+                    <input type="checkbox" name="bool">
                     <input type="submit" value="register" class="btn btn-primary">
                 </form>
             <?php
@@ -60,19 +57,13 @@ $result = $connection->getAllUser($user_id);
             require_once 'Album.php';
             require_once 'connection.php';
 
-            if (isset($_POST['myBoolean'])) {
-                $myBoolean = boolval($_POST['myBoolean']);
-                return $myBoolean;
-
-            }
-            
 
 
             $user_id = $_GET['id'];
             if ($_POST) {
                 $album = new album(
                     $_POST['titre'],
-                    $myBoolean,
+                    $_POST['bool'],
                     $_SESSION['id'],
                 );
 

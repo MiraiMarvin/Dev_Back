@@ -119,6 +119,19 @@ class Connection
             'album_id' => $film->album_id,
         ]);
     }
+    public function insertAL_SH (album_share $album_share): bool
+    {
+        $query = 'INSERT INTO album_share (id_receive, id_send, album_id)
+                  VALUES (:id_receive, :id_send, :album_id)';
+
+        $statement = $this->pdo->prepare($query);
+
+        return $statement->execute([
+            'id_receive' => $album_share->id_receive,
+            'id_send' => $album_share->id_send,
+            'album_id' => $album_share->album_id,
+        ]);
+    }
     public function getAllFilm($album_id): array
     {
         $query = "SELECT * FROM film WHERE album_id = '$album_id'";
