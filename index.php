@@ -20,7 +20,7 @@ require_once 'connection.php';
     <link href="dist/style.css" rel="stylesheet">
     <title>SpyMovies</title>
 </head>
-<body class="bg-black">
+<body class="">
 
 <section class="w-full h-screen bg-[url('../image/bannerpromo.png')] bg-no-repeat bg-cover" >
     <div class="flex flex-row justify-between h-20 items-center">
@@ -45,16 +45,12 @@ require_once 'connection.php';
 <section class="w-full ">
     <div class="items-center text-center my-16">
         <h2 class="font-Akira text-3xl text-white my-4">Movies</h2>
-        <form id="search-form" class="bg-black  ">
+        <form id="search-form" class="">
 
-            <input type="text" id="search-input" name="search" class="bg-black border border-white text-white px-32" >
+            <input type="text" id="search-input" name="search" class="bg-transparent border border-white text-white px-32" >
             <button type="submit" class="text-white" id="search-button">Go</button>
         </form>
         <a href="searchgenre.php" class="text-white text-2xl font-Bahn">cherchez par genre</a>
-    </div>
-
-    <div class="w-3/12 ">
-
     </div>
     <div class="flex flex-row w-full justify-evenly  ">
         <div class="w-9/12 flex flex-wrap gap-8 items-center text-center justify-evenly " id="right_search">

@@ -84,13 +84,16 @@ $result = $connection->getAllUser($id_foreign);
             <?php
             $user_id = $_GET['item'];
             $connection = new Connection();
-            $result = $connection->getAllAlbum($user_id);
+            $result = $connection->getAllAlbumpublic($user_id);
 
 
             foreach($result as $alb) { ?>
+                <p class="hidden"><?=$url = "inside_albpublic.php?albid=" . $alb['id'] ;?></p>
                 <div class="border-white border-2 w-32 h-32 flex flex-wrap gap-8 mt-24">
-                    <h2 class="text-white text-l font-Bahn"><?= $alb['title']?></h2>
-
+                    <form method="post" action="<?=$url?>" >
+                        <h2 class="text-white text-l font-Bahn"><?= $alb['title']?></h2>
+                        <button name="submit" type="submit" class="text-white font-Bahn">voir</button>
+                    </form>
                 </div>
             <?php } ?>
         </div>

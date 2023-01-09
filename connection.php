@@ -36,31 +36,6 @@ class Connection
         return $statement->fetchAll()[0];
     }
 
-
-    public function getAll(): array
-    {
-        $query = 'SELECT * FROM pets JOIN user ON user.id = pets.user_id';
-
-        $statement = $this->pdo->prepare($query);
-        $statement->execute();
-
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-
-    public function Insert_pets(pets $pets): bool
-    {
-        $query = 'INSERT INTO pets (name_pets, type_pets, user_id)
-                  VALUES (:name_pets, :type_pets, :user_id)';
-
-        $statement = $this->pdo->prepare($query);
-
-        return $statement->execute([
-            'name_pets' => $pets->name,
-            'type_pets' => $pets->type,
-            'user_id' => $pets->foreign_key,
-        ]);
-    }
     public function getAllUser($user_id): array
     {
         $query = "SELECT * FROM user WHERE id = '$user_id'";
@@ -82,28 +57,15 @@ class Connection
         $statement = $this->pdo->query($query);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function delete(int $id): bool
-    {
-        $query = 'DELETE FROM pets
-                  WHERE id = :id';
-
-        $statement = $this->pdo->prepare($query);
-
-        return $statement->execute([
-            'id' => $id,
-        ]);
-    }
-
     public function insertAl(album $album): bool
     {
-        $query = 'INSERT INTO album (title, status, user_id)
-          VALUES (:titre, :status, :user_id)';
+        $query = 'INSERT INTO album (title,user_id)
+          VALUES (:titre, :user_id)';
 
         $statement = $this->pdo->prepare($query);
 
         return $statement->execute([
             'titre' => $album->titre,
-            'status' => $album->status,
             'user_id' => $album->user_id,
         ]);
     }
@@ -166,6 +128,39 @@ class Connection
         $statement = $this->pdo->query($query);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function getAllAlbumShare($user_id): array
+    {
+        $query = "SELECT * FROM album_share WHERE id_receive = '$user_id' AND accept = TRUE";
+
+        $statement = $this->pdo->query($query);
+        $statement ->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getAlbbyID($album): array
+    {
+        $query = "SELECT * FROM album WHERE id = '$album'";
+
+        $statement = $this->pdo->query($query);
+        $statement ->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC)[0];
+    }
+    public function PutTrueAlb($alb_id): array
+    {
+        $query = "UPDATE album SET status = TRUE WHERE id = '$alb_id'";
+
+        $statement = $this->pdo->query($query);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function getAllAlbumpublic($user_id): array
+    {
+        $query = "SELECT * FROM album WHERE user_id = '$user_id' AND status = FALSE";
+
+        $statement = $this->pdo->query($query);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
 
 
 

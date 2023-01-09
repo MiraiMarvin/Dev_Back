@@ -3,7 +3,6 @@ class album
 {
     public function __construct(
         public string $titre,
-        public bool $status,
         public int $user_id,
 
     )

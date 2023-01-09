@@ -8,6 +8,13 @@
     font-family: "bahnschrift";
     src: url("../fonts/BAHNSCHRIFT.TTF");
 }
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #050505;
+}
 
 .search-card{
     width: 15%;
