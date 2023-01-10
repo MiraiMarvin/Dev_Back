@@ -15,7 +15,7 @@ require_once 'connection.php';
     <link href="dist/style.css" rel="stylesheet">
     <title>Single_page_movies</title>
 </head>
-<body class="bg-black">
+<body class="">
 <?php include('header.php'); ?>
 <section class="single_page_main">
     <div id="single_pic"> </div>

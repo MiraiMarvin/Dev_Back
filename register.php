@@ -11,15 +11,20 @@
 </head>
 <body>
 <?php include('header.php'); ?>
-<form method="POST" class="">
-<input type="text" name="email" id="log-email" placeholder="mail" class="">
-<input type="text" name="password" id="log-pass" placeholder="password" class="">
-<input type="text" name="username" id="log-user" placeholder="username" class="">
-<input type="text" name="last_name" id="log-Lname" placeholder="last name" class="">
-<input type="text" name="bio" id="log-bio" placeholder="biographie" class="">
-<input type="submit" value="register" class="btn btn-primary">
-</form>
-<a href="login.php">login</a>
+<section class="container">
+    <div class="box_log">
+        <form method="POST" class="flex flex-col font-Bahn">
+            <h2 class="font-Akira">Inscrivez Vous</h2>
+        <input type="text" name="email" id="log-email" placeholder="mail" class="bg-transparent">
+        <input type="text" name="password" id="log-pass" placeholder="password" class="bg-transparent">
+        <input type="text" name="username" id="log-user" placeholder="username" class="bg-transparent">
+        <input type="text" name="last_name" id="log-Lname" placeholder="last name" class="bg-transparent">
+        <input type="text" name="bio" id="log-bio" placeholder="biographie" class="bg-transparent">
+        <input type="submit" value="register" class="btn btn-primary">
+        </form>
+        <a href="login.php">login</a>
+    </div>
+</section>
 <?php
 
 require_once 'user.php';

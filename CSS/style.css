@@ -8,13 +8,18 @@
     font-family: "bahnschrift";
     src: url("../fonts/BAHNSCHRIFT.TTF");
 }
+html{
+    scroll-behavior: smooth;
+}
 *{
     padding: 0;
     box-sizing: border-box;
+    color: #e1e1e1;
 }
 body{
-    background-color: #050505;
+    background-color: #0D0D0D;
 }
+
 
 .search-card{
     width: 15%;
@@ -48,7 +53,7 @@ body{
 
 }
 #single_desc{
-    color: white;
+
     width: 40%;
     font-size: 20px;
 
@@ -58,7 +63,7 @@ body{
 #single_pic{
     text-align: center;
     align-items: center;
-    color: white;
+
     width: 40%;
 
 
@@ -164,4 +169,28 @@ option{
 }
 .del_film{
     color: white;
+}
+.button_nav{
+    border: solid 2px #e5e7eb;
+
+}
+.navbutton{
+    margin-top: 600px;
+}
+.box_log{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: solid 2px #e5e7eb;
+
+}
+.container{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    margin-top: 30vh;
+
 }

@@ -42,12 +42,16 @@ if(isset($_POST['send'])){
 </head>
 <?php include('header.php'); ?>
 <body>
-
-<form method="POST" class="" align="center">
-    <input type="text" name="email" id="log-email" placeholder="mail" class="">
-    <input type="text" name="password" id="log-pass" placeholder="password" class="">
-    <input type="submit" value="register" name="send" class="">
-</form>
+<section class="container">
+    <div class="box_log">
+    <form method="POST" class=" flex flex-col font-Bahn">
+        <h2 class="font-Akira">Connectez vous</h2>
+        <input type="text" name="email" id="log-email" placeholder="mail" class=" bg-transparent">
+        <input type="text" name="password" id="log-pass" placeholder="password" class="bg-transparent">
+        <input type="submit" value="register" name="send" class="">
+    </form>
+    </div>
+</section>
 
 </body>
 </html>

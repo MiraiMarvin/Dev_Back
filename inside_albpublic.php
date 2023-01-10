@@ -12,7 +12,7 @@ require_once 'connection.php';
     <link href="dist/style.css" rel="stylesheet">
     <title>SpyMovies</title>
 </head>
-<body class="bg-black">
+<body class="">
 <?php include('header.php'); ?>
 <section>
     <div>

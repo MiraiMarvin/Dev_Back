@@ -16,13 +16,13 @@ $result = $connection->getAllUser($user_id);
     <link href="dist/style.css" rel="stylesheet">
     <title>Profil</title>
 </head>
-<body class=" bg-black">
+<body class="">
 <?php include('header.php'); ?>
-<section class="w-screen h-screen">
-    <div class=" flex flex-col">
-        <div class="flex flex-row space-evenly items-center gap-8">
+<section class="w-full">
+    <div class=" flex flex-col w-full items-center mt-24">
+        <div class="flex flex-row space-evenly items-center gap-8 border-b-2 border-white w-3/4 ">
             <img src="./image/Arcane.png" alt="PP" class="rounded-full w-96 h-auto">
-            <div>
+            <div class="">
                 <?php
                 $user_id = $_SESSION['id'];
                 $connection = new Connection();
@@ -76,7 +76,7 @@ $result = $connection->getAllUser($user_id);
             </div>
 
         </div>
-        <div>
+        <div class="border-white border-b-2">
             <button id="myBtn" class="font-Bahn text-white mt-24">ajouter un album</button>
             <h2 class="text-white font-Akira">Mes albums</h2>
         </div>
@@ -122,7 +122,7 @@ $result = $connection->getAllUser($user_id);
             ?>
             </div>
         </div>
-        <div class="flex flex-wrap gap-8">
+        <div class="flex flex-wrap gap-8 items-center w-3/4 mb-20">
         <?php
         $user_id = $_SESSION['id'];
         $connection = new Connection();
@@ -131,9 +131,9 @@ $result = $connection->getAllUser($user_id);
 
         foreach($result as $alb) { ?>
                 <p class="hidden"><?=$url = "inside_alb.php?albid=" . $alb['id'] ;?></p>
-            <div  class="border-white border-2 w-32 h-32 flex flex-wrap gap-8 mt-24">
+            <div  class="border-white border-2 w-40 h-56 flex flex-wrap gap-8 mt-24 flex flex-col place-items-start">
                 <form method="post" action="<?=$url?>" >
-                <h2 class="text-white text-l font-Bahn"><?= $alb['title']?></h2>
+                <h2 class="text-yellow-50 text-xl font-Bahn"><?= $alb['title']?></h2>
                 <button name="submit" type="submit" class="text-white font-Bahn">voir</button>
                 </form>
                 <form method="POST">
@@ -150,7 +150,7 @@ $result = $connection->getAllUser($user_id);
         }?>
 
         </div>
-        <h2 class="text-white font-Akira">mes albums partagés</h2>
+        <h2 class="text-white font-Akira mb-20 border-white border-b-2">mes albums partages</h2>
         <div class="flex flex-wrap gap-8">
             <?php
             $user_id = $_SESSION['id'];

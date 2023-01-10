@@ -8,7 +8,7 @@
     <link href="dist/style.css" rel="stylesheet">
     <title>SearchGenre</title>
 </head>
-<body class="bg-black">
+<body class="">
 
 <?php include('header.php'); ?>
 

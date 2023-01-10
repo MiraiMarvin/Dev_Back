@@ -1,9 +1,6 @@
 <?php
 session_start();
-// Récupérer la valeur de la variable de session
 $id = $_SESSION['id'];
-
-// Convertir la variable en chaîne JSON
 $id_json = json_encode($id);
 
 require_once 'connection.php';
@@ -22,18 +19,18 @@ require_once 'connection.php';
 </head>
 <body class="">
 
-<section class="w-full h-screen bg-[url('../image/bannerpromo.png')] bg-no-repeat bg-cover" >
+<section class=" h-screen bg-[url('../image/bannerpromo.png')] bg-no-repeat bg-cover " >
     <div class="flex flex-row justify-between h-20 items-center">
-        <h1 class="text-white font-Akira text-5xl px-5">SpyMovies</h1>
+        <h1 class=" font-Akira text-5xl px-5">SpyMovies</h1>
         <div class="font-Bahn text-2xl font-medium flex flex-row">
-            <a class="text-white px-2.5" href="login.php">Log In</a>
-            <a class="text-white px-2.5" href="register.php">Register</a>
+            <a class="px-2.5" href="login.php">Log In</a>
+            <a class="px-2.5" href="register.php">Register</a>
 
             <?php
             if(isset($_SESSION['email']))
             {
                 echo '<img src="./image/Arcane.png" alt="profil-image" id="image-pp">';
-                echo'<a href="disco.php" class="text-white px-2.5">log out</a>';
+                echo'<a href="disco.php" class=" px-2.5">log out</a>';
             }
             ?>
             <script>
@@ -41,16 +38,20 @@ require_once 'connection.php';
             </script>
         </div>
     </div>
+    <div class="navbutton flex flex-row  items-center text-center  ">
+        <a class="button_nav font-Bahn px-8 py-2 m-auto mr-10" href="#discover">Discover</a>
+        <a class="button_nav font-Bahn px-8 py-2 m-auto ml-10" href="#social">Founds friends</a>
+    </div>
 </section>
 <section class="w-full ">
     <div class="items-center text-center my-16">
-        <h2 class="font-Akira text-3xl text-white my-4">Movies</h2>
+        <h2 class="font-Akira text-3xl  my-4">Movies</h2>
         <form id="search-form" class="">
 
-            <input type="text" id="search-input" name="search" class="bg-transparent border border-white text-white px-32" >
-            <button type="submit" class="text-white" id="search-button">Go</button>
+            <input type="text" id="search-input" name="search" placeholder="search.." class="bg-transparent border border-white font-Bahn w-1/3 p-2" >
+            <button type="submit" class="" id="search-button">Go</button>
         </form>
-        <a href="searchgenre.php" class="text-white text-2xl font-Bahn">cherchez par genre</a>
+        <a href="searchgenre.php" id="discover" class="text-2xl font-Bahn">cherchez par genre</a>
     </div>
     <div class="flex flex-row w-full justify-evenly  ">
         <div class="w-9/12 flex flex-wrap gap-8 items-center text-center justify-evenly " id="right_search">
@@ -60,17 +61,17 @@ require_once 'connection.php';
     </div>
 
 </section>
-<section class="w-screen items-center flex flex-col ">
-    <h2 class="text-white font-Akira text-3xl">Social</h2>
-    <h3 class="text-white font-Bahn text-xl">founds friends </h3>
-    <div id="list_user" class="flex flex-col border-t-2 border-b-2 w-1/2">
+<section class="w-full items-center flex flex-col ">
+    <h2 id="social" class=" font-Akira text-3xl">Social</h2>
+    <h3 class=" font-Bahn text-xl">founds friends </h3>
+    <div id="list_user" class="flex flex-col border-t-2 border-b-2 w-1/2 mb-40">
         <?php
         $connection = new Connection();
         $resultall = $connection->getReallyAllUser();
 
 
         foreach($resultall as $all) { ?>
-                <?=$url = "single_user.php?item=" . $all['id'] ;?>
+                <p class="hidden"><?=$url = "single_user.php?item=" . $all['id'] ;?></p>
 
             <div class="flex flex-col  m-4 ">
                 <h3 class="text-xl text-white font-Akira"><?= $all['username'] ?></h3>

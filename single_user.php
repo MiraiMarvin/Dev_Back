@@ -18,11 +18,11 @@ $result = $connection->getAllUser($id_foreign);
     <link href="dist/style.css" rel="stylesheet">
     <title>Profil</title>
 </head>
-<body class=" bg-black">
+<body class="">
 <?php include('header.php'); ?>
-<section class="w-screen h-screen">
-    <div class=" flex flex-col">
-        <div class="flex flex-row space-evenly items-center gap-8">
+<section class="w-screen h-screen ">
+    <div class=" flex flex-col items-center mt-24 ">
+        <div class="flex flex-row space-evenly items-center gap-8 mb-20 border-white border-b-2 w-3/4">
             <img src="./image/Arcane.png" alt="PP" class="rounded-full w-96 h-auto">
             <div>
                 <?php
@@ -80,6 +80,7 @@ $result = $connection->getAllUser($id_foreign);
             </div>
 
         </div>
+        <h2 class="text-white font-Akira">ses albums publique</h2>
         <div class="flex flex-wrap gap-8">
             <?php
             $user_id = $_GET['item'];
@@ -89,7 +90,24 @@ $result = $connection->getAllUser($id_foreign);
 
             foreach($result as $alb) { ?>
                 <p class="hidden"><?=$url = "inside_albpublic.php?albid=" . $alb['id'] ;?></p>
-                <div class="border-white border-2 w-32 h-32 flex flex-wrap gap-8 mt-24">
+                <div class="border-white border-2 w-40 h-56 flex flex-wrap gap-8 mt-24 flex flex-col place-items-start">
+                    <form method="post" action="<?=$url?>" >
+                        <h2 class="text-white text-l font-Bahn"><?= $alb['title']?></h2>
+                        <button name="submit" type="submit" class="text-white font-Bahn">voir</button>
+                    </form>
+                </div>
+            <?php } ?>
+        </div>
+        <h2 class="text-white font-Akira">ses albums partages</h2>
+        <div class="flex flex-wrap gap-8">
+            <?php
+            $user_id = $_GET['item'];
+            $connection = new Connection();
+            $result = $connection->getAllAlbumShare($user_id);
+
+            foreach($result as $alb) { ?>
+                <p class="hidden"><?=$url = "inside_albpublic.php?albid=" . $alb['id'] ;?></p>
+                <div class="border-white border-2 w-40 h-56 flex flex-wrap gap-8 mt-24 flex flex-col place-items-start">
                     <form method="post" action="<?=$url?>" >
                         <h2 class="text-white text-l font-Bahn"><?= $alb['title']?></h2>
                         <button name="submit" type="submit" class="text-white font-Bahn">voir</button>
