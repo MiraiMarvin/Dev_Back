@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Akira Super";
+    src: url("../fonts/Akira Expanded Demo.otf");
+    font-family: "bahnschrift";
+    src: url("../fonts/BAHNSCHRIFT.TTF");
+}
+html{
+    scroll-behavior: smooth;
+}
+*{
+    padding: 0;
+    box-sizing: border-box;
+    color: #e1e1e1;
+}
+body{
+    background-color: #0D0D0D;
+}
+
+
+.search-card{
+    width: 15%;
+    height: 15%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.image_search{
+    width: 90%;
+    height: auto;
+
+}
+.title_search{
+    color: white;
+
+}
+.hideid{
+    display: block;
+    color: white;
+}
+.button_search{
+    color: white;
+}
+.single_page_main{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+
+}
+#single_desc{
+
+    width: 40%;
+    font-size: 20px;
+
+
+
+}
+#single_pic{
+    text-align: center;
+    align-items: center;
+
+    width: 40%;
+
+
+}
+#single_genre{
+    border-left: solid 2px white;
+    color: white;
+
+    width: 20%;
+
+}
+h2{
+    font-family: "Akira Super";
+    font-size: larger;
+}
+h3{
+    font-family: Bahnschrift;
+    font-size: large;
+}
+.pic-single{
+    margin: auto;
+
+}
+.text-single{
+    margin-top: 30px;
+    width: 80%;
+    font-family: bahnschrift;
+
+}
+.genre-single{
+
+    padding: 10px;
+    margin: auto;
+    font-family: bahnschrift;
+    font-weight: bold;
+
+}
+#image-pp{
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+}
+.modal{
+
+    position: fixed;
+    top: 300px;
+    left: 300px;
+    right: 300px;
+    bottom: 300px;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.9);
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    gap: 24px;
+}
+.modalmain{
+    display: none;
+}
+option{
+    background-color: transparent;
+}
+.modalfilm{
+
+    position: fixed;
+    top: 300px;
+    left: 300px;
+    right: 300px;
+    bottom: 300px;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.9);
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    gap: 24px;
+}
+.modalalbmain{
+    display: none;
+}
+#main_contain{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.mainlistfilm{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding: 16px;
+}
+.img_album{
+    width: auto;
+    height: 100px;
+
+}
+.text-single_alb{
+    color: white;
+    font-family: Bahnschrift;
+}
+.del_film{
+    color: white;
+}
+.button_nav{
+    border: solid 2px #e5e7eb;
+
+}
+.navbutton{
+    margin-top: 600px;
+}
+.box_log{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: solid 2px #e5e7eb;
+
+}
+.container{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    margin-top: 30vh;
+
+}
